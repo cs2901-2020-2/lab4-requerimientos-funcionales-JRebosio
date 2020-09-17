@@ -9,9 +9,10 @@
     <version>0.1</version>
 
     <properties>
-        <sonar.projectKey>cs2901-2020-2_lab4</sonar.projectKey>
-        <sonar.organization>cs2901-2020-2</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  	<sonar.projectKey>cs2901-2020-2_lab4-requerimientos-funcionales-JRebosio</sonar.projectKey>
+  	<sonar.organization>cs2901-2020-2</sonar.organization>
+ 	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	<sonar.login>0fdfea244d28727c5a384ecdf3e3d7e5e9649db7</sonar.login>
 	<maven.compiler.source>1.6</maven.compiler.source>
 	<maven.compiler.target>1.6</maven.compiler.target>
     </properties>

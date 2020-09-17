@@ -11,7 +11,7 @@ public class  DNASequencer {
     }
    
 
-    public static String SCSLength(String X, String Y, int m, int n)
+    public static String scsLength(String X, String Y, int m, int n)
     {
         if (m == 0 || n == 0) {
 		return X.substring(0,m) + Y.substring(0,n);
