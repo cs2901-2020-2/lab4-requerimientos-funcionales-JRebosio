@@ -19,11 +19,11 @@ public class  DNASequencer {
 
 		
 	if (X.charAt(m - 1) == Y.charAt(n - 1)) {
-		return SCSLength(X, Y, m - 1, n - 1) + Y.charAt(n - 1);
+		return scsLength(X, Y, m - 1, n - 1) + Y.charAt(n - 1);
 	}
 
-	String a = SCSLength(X, Y, m, n - 1) + Y.charAt(n - 1);
-	String b = SCSLength(X, Y, m - 1, n) + X.charAt(m - 1);
+	String a = scsLength(X, Y, m, n - 1) + Y.charAt(n - 1);
+	String b = scsLength(X, Y, m - 1, n) + X.charAt(m - 1);
 		
 	if(a.length()> b.length()) return b;
 	else return a;
@@ -35,8 +35,8 @@ public class  DNASequencer {
 	String Y=part.get(1);
 	String Z=part.get(2);
 		
-	String R1=SCSLength(X, Y, X.length(), Y.length());
-	String R2=SCSLength(R1, Z, R1.length(), Z.length());
+	String R1=scsLength(X, Y, X.length(), Y.length());
+	String R2=scsLength(R1, Z, R1.length(), Z.length());
 		
 	return R2;	
     }
