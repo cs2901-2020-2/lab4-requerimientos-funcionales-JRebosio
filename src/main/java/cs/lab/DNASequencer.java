@@ -11,33 +11,34 @@ public class  DNASequencer {
     }
    
 
-    public static String scsLength(String X, String Y, int m, int n)
+    public static String scsLength(String first, String second, int m, int n)
     {
         if (m == 0 || n == 0) {
-		return X.substring(0,m) + Y.substring(0,n);
+		return first.substring(0,m) + second.substring(0,n);
 	}
 
 		
-	if (X.charAt(m - 1) == Y.charAt(n - 1)) {
-		return scsLength(X, Y, m - 1, n - 1) + Y.charAt(n - 1);
+	if (first.charAt(m - 1) == second.charAt(n - 1)) {
+		return scsLength(first, second, m - 1, n - 1) + second.charAt(n - 1);
 	}
 
-	String a = scsLength(X, Y, m, n - 1) + Y.charAt(n - 1);
-	String b = scsLength(X, Y, m - 1, n) + X.charAt(m - 1);
+	String resultone = scsLength(first, second, m, n - 1) + second.charAt(n - 1);
+	String resulttwo = scsLength(first, second, m - 1, n) + first.charAt(m - 1);
 		
-	if(a.length()> b.length()) return b;
-	else return a;
+	if(resultone.length()> resulttwo.length()) return resulttwo;
+	else return resultone;
     }
 		
     public String calculate(List<String> part){
 	
-	String X=part.get(0);
-	String Y=part.get(1);
-	String Z=part.get(2);
+	String partone=part.get(0);
+	String parttwo=part.get(1);
+	String partthree=part.get(2);
 		
-	String R1=scsLength(X, Y, X.length(), Y.length());
-	String R2=scsLength(R1, Z, R1.length(), Z.length());
-		
-	return R2;	
+	String tempresult =scsLength(partone, parttwo, partone.length(), parttwo.length());
+	
+	
+	return scsLength(tempresult, partthree, tempresult.length(), partthree.length());
+			
     }
 }
