@@ -29,16 +29,25 @@ public class  DNASequencer {
 	else return resultone;
     }
 		
-    public String calculate(List<String> part){
+    public String calculate(List<String> parts) throws SubseqLength, ListSize {
 	
-	String partone=part.get(0);
-	String parttwo=part.get(1);
-	String partthree=part.get(2);
-		
-	String tempresult =scsLength(partone, parttwo, partone.length(), parttwo.length());
+	String partsone=parts.get(0);
+	String partstwo=parts.get(1);
+	String partsthree=parts.get(2);
+
+	if(parts.size() > 160000 ) throw new ListSize("Too many subsequences.");
+	
+	for( String cur : parts ){
+		if( cur.length() > 200 ) {
+			throw new SubseqLength("Very long subsequence");
+		}
+					 
+	}
+	
+	String tempresult =scsLength(partsone, partstwo, partsone.length(), partstwo.length());
 	
 	
-	return scsLength(tempresult, partthree, tempresult.length(), partthree.length());
+	return scsLength(tempresult, partsthree, tempresult.length(), partsthree.length());
 			
     }
 }
